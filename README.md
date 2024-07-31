@@ -19,6 +19,7 @@ Contador de Calorías es una aplicación web desarrollada con React que permite 
 
 - ![react](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white&labelColor=101010)
   - UseReducer
+  - ContextAPI
 - ![typescript](https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white&labelColor=101010)
 
 - ![tailwindcss](https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white&labelColor=101010)

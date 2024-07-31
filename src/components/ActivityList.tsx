@@ -2,17 +2,12 @@ import { useMemo } from 'react';
 import { categories } from '../data/categories';
 import { Activity } from '../types/index';
 import { PencilSquareIcon, XCircleIcon } from '@heroicons/react/24/outline';
-import { ActivityActions } from '../reducers/activityReducer';
+import { useContextHook } from '../hooks/useActivity';
 
-type ActivityListProps = {
-  activities: Activity[];
-  dispatch: React.Dispatch<ActivityActions>;
-};
+export default function ActivityList() {
+  const { state, dispatch } = useContextHook();
+  const { activities } = state;
 
-export default function ActivityList({
-  activities,
-  dispatch,
-}: ActivityListProps) {
   const categoryName = useMemo(
     () => (category: Activity['category']) =>
       categories.map((cat) => (cat.id === category ? cat.name : '')),

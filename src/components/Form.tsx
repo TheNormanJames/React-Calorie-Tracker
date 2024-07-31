@@ -1,12 +1,8 @@
-import { Dispatch, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { categories } from '../data/categories';
 import { Activity } from '../types';
-import { ActivityActions, ActivityState } from '../reducers/activityReducer';
+import { useContextHook } from '../hooks/useActivity';
 
-type FormsProps = {
-  dispatch: Dispatch<ActivityActions>;
-  state: ActivityState;
-};
 // let id = crypto.randomUUID()
 const initialState: Activity = {
   id: crypto.randomUUID(),
@@ -15,7 +11,8 @@ const initialState: Activity = {
   calories: 0,
 };
 
-export default function Form({ dispatch, state }: FormsProps) {
+export default function Form() {
+  const { state, dispatch } = useContextHook();
   const [activity, setActivity] = useState<Activity>(initialState);
 
   useEffect(() => {
